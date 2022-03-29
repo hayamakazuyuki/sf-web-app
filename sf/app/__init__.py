@@ -1,10 +1,9 @@
 from flask import Flask
 
+from .contractors.views import contractors
+
 def create_app():
     app = Flask(__name__)
 
-    @app.route('/')
-    def index():
-        return 'sf 100'
-
+    app.register_blueprint(contractors)
     return app
